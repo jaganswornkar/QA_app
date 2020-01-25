@@ -49,6 +49,7 @@ render(){
                         <TextField
                           label="Write your answer here"
                           fullWidth
+			  multiline
                           margin="normal"
                           variant="outlined"
                           id={q.Q_id.toString()}
@@ -82,7 +83,8 @@ render(){
                           <TextField
                             label="Write your answer here"
                             fullWidth
-                            margin="normal"
+                            multiline
+			    margin="normal"
                             variant="outlined"
                             id={q.Q_id.toString()}
                             onChange={this.props.ansChangeHandler}

@@ -21,7 +21,7 @@ export class App extends Component {
 
   UNSAFE_componentWillMount(){     
       axios
-      .get('http://localhost:1234/get')
+      .get('http://13.126.28.110:1234/get')
       .then((result)=>{
         this.setState({ques:result.data})
       })
@@ -30,7 +30,7 @@ export class App extends Component {
       })
 
       axios
-      .get('http://localhost:1234/getAns')
+      .get('http://13.126.28.110:1234/getAns')
       .then((result)=>{
         this.setState({ans:result.data})
       }).catch((err)=>{
@@ -52,7 +52,7 @@ export class App extends Component {
       // console.log('this is ques',e.target.value)
       if(e.target.value.length>0){
         axios
-        .post('http://localhost:1234/question',{Question:e.target.value})
+        .post('http://13.126.28.110:1234/question',{Question:e.target.value})
         .then((data)=>{console.log('data sent to backned ',data.data);
           this.setState({ques:data.data,item:''})
           })
@@ -65,7 +65,7 @@ export class App extends Component {
     if(e.key==='Enter'){
       if(e.target.value.length>0){
       axios
-      .post('http://localhost:1234/answer',{Q_id:e.target.id,answer:e.target.value})
+      .post('http://13.126.28.110:1234/answer',{Q_id:e.target.id,answer:e.target.value})
       .then((result)=>{
         // console.log('ans sent to backed',result.data)
         var ansIns=this.state.ans;
