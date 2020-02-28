@@ -93,12 +93,12 @@ export class App extends Component {
   userSearch = text => {
     // console.log(this.state.ques)
     new Promise((resolve, reject) => {
-      var data = this.state.ques.filter(e => e.question.toLowerCase().startsWith(text))
+      var data = this.state.ques.filter(e => e.question.toLowerCase().startsWith(text.toLowerCase()))
       if(data.length>0){
         resolve(data)
       }else{
         resolve(
-          this.state.ques.filter(e=>{return e.question.toLowerCase().includes(text)})
+          this.state.ques.filter(e=>{return e.question.toLowerCase().includes(text.toLowerCase())})
         )
       }
       
